@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body >
+    <h1 id="title">Original Text</h1>
+    <button id="myBtn">Click Me</button>
+    <button id="ref">Refresh Button</button>
+
+    <script>
+      let heading = document.getElementById("title");
+      let button = document.getElementById("myBtn");
+
+      let button2 = document.getElementById("ref");
+
+      button.addEventListener("click", () => {
+        document.body.style.backgroundColor = "blue"
+        heading.textContent = "Text Changed!";
+        heading.style.color = "red";
+      });
+
+      button2.addEventListener("click",()=>{
+         document.body.style.backgroundColor = "yellow"
+      })
+    </script>
+  </body>
+</html>

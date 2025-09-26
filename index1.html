@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body >
+    <h1 id="title">Original Text</h1>
+<p id="para">This is some text.</p>
+<button id="toggleBtn">Hide/Show Text</button>
+    <script>
+    let para = document.getElementById("para");
+let button = document.getElementById("toggleBtn");
+
+button.addEventListener("click", () => {
+  para.style.display = (para.style.display === "none") ? "block" : "none";
+});
+    </script>
+  </body>
+</html>
