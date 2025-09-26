@@ -1,0 +1,23 @@
+<h2 id="counter">0</h2>
+<button id="incBtn">Increase</button>
+
+<p id="text">Stylish Text</p>
+<button id="styleBtn">make it fancy</button>
+
+<script>
+let counter = document.getElementById("counter");
+let button = document.getElementById("incBtn");
+
+button.addEventListener("click", () => {
+  counter.textContent = parseInt(counter.textContent) + 1;
+});
+
+let text = document.getElementById("text");
+let button2 = document.getElementById("styleBtn");
+
+button2.addEventListener("click", () => {
+  text.style.fontSize = "30px";
+  text.style.fontWeight = "bold";
+  text.style.color = "green";
+});
+</script>
