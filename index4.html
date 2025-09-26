@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #output {
+      font-size: 20px;
+      margin-top: 20px;
+      transition: all 0.5s;
+    }
+    #colorBox {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin-top: 20px;
+      transition: all 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Interactive Page</h1>
+
+  <input type="text" id="userInput" placeholder="Type something..." />
+  <button id="updateBtn">Update</button>
+  <button id="resetBtn">Reset</button>
+
+  <div id="output"></div>
+  <div id="colorBox"></div>
+
+  <script>
+    const heading = document.getElementById("title");
+    const input = document.getElementById("userInput");
+    const updateBtn = document.getElementById("updateBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const output = document.getElementById("output");
+    const colorBox = document.getElementById("colorBox");
+
+    // Event 1: Update heading and output with user input
+    updateBtn.addEventListener("click", () => {
+      const text = input.value || "Nothing typed!";
+      heading.textContent = text;
+      output.textContent = `You typed: ${text}`;
+      
+      // Event 2: Change heading color dynamically based on text length
+      if (text.length < 5) {
+        heading.style.color = "green";
+      } else if (text.length < 10) {
+        heading.style.color = "orange";
+      } else {
+        heading.style.color = "red";
+      }
+
+      // Event 3: Change colorBox background randomly
+      const randomColor = `hsl(${Math.random() * 360}, 70%, 70%)`;
+      colorBox.style.backgroundColor = randomColor;
+
+      // Event 4: Add slight scale effect for fun
+      colorBox.style.transform = "scale(1.2)";
+      setTimeout(() => { colorBox.style.transform = "scale(1)"; }, 300);
+    });
+
+    // Reset button functionality
+    resetBtn.addEventListener("click", () => {
+      heading.textContent = "Interactive Page";
+      heading.style.color = "black";
+      output.textContent = "";
+      input.value = "";
+      colorBox.style.backgroundColor = "lightblue";
+    });
+  </script>
+</body>
+</html>
