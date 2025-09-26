@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body >
+
+    <h1 id="title">Travel wish List</h1>
+
+        <p><button id="butt">Add list</button>
+</p>
+    <ol id="list">
+  <li>Japan</li>
+</ul>
+
+
+
+    <script>
+    //let para = document.getElementById("para");
+    let button = document.getElementById("butt");
+    let list = document.getElementById("list");
+
+    button.addEventListener("click", () => {
+          let newItem = document.createElement("li");
+        newItem.textContent = "Paris";
+        list.appendChild(newItem);
+    });
+    </script>
+  </body>
+</html>
